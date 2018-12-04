@@ -1,0 +1,17 @@
+.activeRow-homepage:hover:nth-child(n) {
+    background: #f1f1f1;
+    box-shadow:inset 0 0 6px 0 rgba(0, 0, 0, 0.1);
+    .actions{
+        display:block;
+        color:#2196f3;
+        text-align:right;
+    }
+  }
+
+  .activeRow-homepage {
+    background: #ffffff;
+    .actions{
+        display:none;
+    }
+  }
+

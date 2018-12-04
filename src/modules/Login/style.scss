@@ -1,0 +1,115 @@
+.card-login{
+    position: absolute;
+    box-sizing: border-box;
+    top:50%;
+    left: 50%;
+    width: 400px;
+    height: 226px;
+    transform: translate(-50%, -50%);
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    .createAccount-login{
+        cursor:pointer;
+        margin-top:1rem;
+        text-align: center;
+        font-size: 0.8rem;
+    }
+    .createAccount-login:hover{
+            color:#7795e7;
+    }
+}
+
+.button-login{
+        position: relative;
+        margin-top: 50px;
+        input[type="submit"]{
+            width: 100%;
+            outline:none;
+            border:none;
+            color:#fff;
+            background: #7795e7;
+            padding:10px 0;
+        }
+}
+
+.forgetPassword-login{
+    margin-top:5px;
+    padding:0 30px;
+    color: #7795e7;
+    font-size: 0.8em;
+    float: right;
+}
+
+
+.inputContainer-login{
+    position: relative;
+    color:rgba(0,0,0,.87);
+    margin-top: 45px;
+    padding:0 30px;
+    label{
+        padding-left:30px; 
+        position: absolute;
+        top: -26px;
+        font-size:12px;
+        left:0;
+    }
+    .multiSelectBox{
+        input{
+            padding-left: 5px !important;
+            font-size: 0.75rem;
+            width:100%;     
+            background-color: #fff;
+            padding:0.625rem 0;
+            width:100%;
+            box-sizing: border-box;
+            border:1px solid rgba(25, 123, 221, 0.15);
+            border-radius: 5px;
+        }
+    }
+    input, textarea, select{
+        padding-left: 5px !important;
+        font-size: 12px;
+        width:100%;
+        background-color: #f4f5f6;
+        padding:6px 0;
+        width:100% !important;
+        box-sizing: border-box;
+        border:1px solid rgba(25, 123, 221, 0.15) !important;
+        border:none !important;
+    }
+    textarea{
+        height:40px;
+        resize: none;
+    }
+    input[type =date]{
+        padding: 4px 0;
+    }
+    
+    input:focus,
+    textarea:focus,
+    select:focus{
+        border:1px solid rgb(110, 168, 252);
+        outline:none ;
+    }
+    .fileInput-basicFields{
+        position: absolute;
+        right: 2.8rem;
+        color:#dedfe0;
+    }
+}
+
+.helperText-tools{
+    color:#db2828;
+    font-size: 0.7em;
+}
+
+.required-login:after {
+        margin: -.2em 0 0 .2em;
+      content: '*';
+      color: #db2828;
+}
+
+.eye-login{
+    position: absolute;
+    top:4px;
+    right: 35px;
+}
