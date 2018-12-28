@@ -73,7 +73,7 @@ measureFileSizesBeforeBuild(paths.appBuild)
         useYarn
       );
     },
-    (err )=> {
+    (err)=> {
       printBuildError(err);
       process.exit(1);
     }
