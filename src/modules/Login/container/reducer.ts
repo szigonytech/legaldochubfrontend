@@ -1,5 +1,5 @@
-import * as actionType from './actions';
-import { initialState } from './initialState';
+import * as actionType from "./actions";
+import { initialState } from "./initialState";
 
 type Action = { type: String; payload: any };
 

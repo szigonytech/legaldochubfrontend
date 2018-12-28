@@ -1,10 +1,10 @@
-import * as React from 'react';
-import Button from '@material-ui/core/Button';
-import NavigationIcon from '@material-ui/icons/Navigation';
-import TableHeader from './TabelHeader';
-import TableBody from './TabelBody';
-import EmptyMessage from './EmptyMessage';
-import * as  _ from 'lodash';
+import * as React from "react";
+import Button from "@material-ui/core/Button";
+import NavigationIcon from "@material-ui/icons/Navigation";
+import TableHeader from "./TabelHeader";
+import TableBody from "./TabelBody";
+import EmptyMessage from "./EmptyMessage";
+import * as  _ from "lodash";
 export default class HomePageView extends React.Component<any, any> {
     componentWillMount() {
         let { actions, match: { params } }: any = this.props;

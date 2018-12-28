@@ -19,20 +19,20 @@
 
 /* eslint-env browser, es6 */
 
-'use strict';
+"use strict";
 
 // tslint:disable-next-line:max-line-length
-const applicationServerPublicKey = 'BNf6TB_vvy2YRZfduaJRXimUoxsoIZY6l5zBfhDHm2nBwL_TAna-39uxHaNPOu3sBdwVx5HdecYnyVDkfxjal-g';
+const applicationServerPublicKey = "BNf6TB_vvy2YRZfduaJRXimUoxsoIZY6l5zBfhDHm2nBwL_TAna-39uxHaNPOu3sBdwVx5HdecYnyVDkfxjal-g";
 
-// const pushButton: any = document.querySelector('.js-push-btn');
+// const pushButton: any = document.querySelector(".js-push-btn");
 // let isSubscribed: any = false;
 // let swRegistration: any = null;
 
 // function urlB64ToUint8Array(base64String: any) {
-//   const padding = '='.repeat((4 - base64String.length % 4) % 4);
+//   const padding = "=".repeat((4 - base64String.length % 4) % 4);
 //   const base64 = (base64String + padding)
-//     .replace(/\-/g, '+')
-//     .replace(/_/g, '/');
+//     .replace(/\-/g, "+")
+//     .replace(/_/g, "/");
 
 //   const rawData = window.atob(base64);
 //   const outputArray = new Uint8Array(rawData.length);
@@ -44,27 +44,27 @@ const applicationServerPublicKey = 'BNf6TB_vvy2YRZfduaJRXimUoxsoIZY6l5zBfhDHm2nB
 // }
 
 // export function register() {
-//   if ('serviceWorker' in navigator && 'PushManager' in window) {
-//     console.log('Service Worker and Push is supported');
+//   if ("serviceWorker" in navigator && "PushManager" in window) {
+//     console.log("Service Worker and Push is supported");
 
-//     navigator.serviceWorker.register('sw.js')
+//     navigator.serviceWorker.register("sw.js")
 //       .then(function (swReg: any) {
-//         console.log('Service Worker is registered', swReg);
+//         console.log("Service Worker is registered", swReg);
 
 //         swRegistration = swReg;
 //         initializeUI();
 //       })
 //       .catch(function (error: any) {
-//         console.log('Service Worker Error', error);
+//         console.log("Service Worker Error", error);
 //       });
 //   } else {
-//     console.warn('Push messaging is not supported');
-//     pushButton.textContent = 'Push Not Supported';
+//     console.warn("Push messaging is not supported");
+//     pushButton.textContent = "Push Not Supported";
 //   }
 
 // }
 // function initializeUI() {
-//   pushButton.addEventListener('click', function () {
+//   pushButton.addEventListener("click", function () {
 //     pushButton.disabled = true;
 //     if (isSubscribed) {
 //       // TODO: Unsubscribe user
@@ -79,9 +79,9 @@ const applicationServerPublicKey = 'BNf6TB_vvy2YRZfduaJRXimUoxsoIZY6l5zBfhDHm2nB
 //       isSubscribed = !(subscription === null);
 
 //       if (isSubscribed) {
-//         console.log('User IS subscribed.');
+//         console.log("User IS subscribed.");
 //       } else {
-//         console.log('User is NOT subscribed.');
+//         console.log("User is NOT subscribed.");
 //       }
 
 //       updateBtn();
@@ -89,16 +89,16 @@ const applicationServerPublicKey = 'BNf6TB_vvy2YRZfduaJRXimUoxsoIZY6l5zBfhDHm2nB
 // }
 
 // function updateBtn() {
-//   if (Notification.permission === 'denied') {
-//     pushButton.textContent = 'Push Messaging Blocked.';
+//   if (Notification.permission === "denied") {
+//     pushButton.textContent = "Push Messaging Blocked.";
 //     pushButton.disabled = true;
 //     updateSubscriptionOnServer(null);
 //     return;
 //   }
 //   if (isSubscribed) {
-//     pushButton.textContent = 'Disable Push Messaging';
+//     pushButton.textContent = "Disable Push Messaging";
 //   } else {
-//     pushButton.textContent = 'Enable Push Messaging';
+//     pushButton.textContent = "Enable Push Messaging";
 //   }
 
 //   pushButton.disabled = false;
@@ -111,7 +111,7 @@ const applicationServerPublicKey = 'BNf6TB_vvy2YRZfduaJRXimUoxsoIZY6l5zBfhDHm2nB
 //     applicationServerKey: applicationServerKey
 //   })
 //     .then(function (subscription: any) {
-//       console.log('User is subscribed.');
+//       console.log("User is subscribed.");
 
 //       updateSubscriptionOnServer(subscription);
 
@@ -120,7 +120,7 @@ const applicationServerPublicKey = 'BNf6TB_vvy2YRZfduaJRXimUoxsoIZY6l5zBfhDHm2nB
 //       updateBtn();
 //     })
 //     .catch(function (err: any) {
-//       console.log('Failed to subscribe the user: ', err);
+//       console.log("Failed to subscribe the user: ", err);
 //       updateBtn();
 //     });
 // }
@@ -132,12 +132,12 @@ const applicationServerPublicKey = 'BNf6TB_vvy2YRZfduaJRXimUoxsoIZY6l5zBfhDHm2nB
 //       }
 //     })
 //     .catch(function (error: any) {
-//       console.log('Error unsubscribing', error);
+//       console.log("Error unsubscribing", error);
 //     })
 //     .then(function () {
 //       updateSubscriptionOnServer(null);
 
-//       console.log('User is unsubscribed.');
+//       console.log("User is unsubscribed.");
 //       isSubscribed = false;
 
 //       updateBtn();
@@ -147,14 +147,14 @@ const applicationServerPublicKey = 'BNf6TB_vvy2YRZfduaJRXimUoxsoIZY6l5zBfhDHm2nB
 // function updateSubscriptionOnServer(subscription: any) {
 //   // TODO: Send subscription to application server
 
-//   const subscriptionJson: any = document.querySelector('.js-subscription-json');
+//   const subscriptionJson: any = document.querySelector(".js-subscription-json");
 //   const subscriptionDetails: any =
-//     document.querySelector('.js-subscription-details');
+//     document.querySelector(".js-subscription-details");
 
 //   if (subscription) {
 //     subscriptionJson.textContent = JSON.stringify(subscription);
-//     subscriptionDetails.classList.remove('is-invisible');
+//     subscriptionDetails.classList.remove("is-invisible");
 //   } else {
-//     subscriptionDetails.classList.add('is-invisible');
+//     subscriptionDetails.classList.add("is-invisible");
 //   }
 // }

@@ -1,8 +1,8 @@
-import { Layout } from '../../../model';
+import { Layout } from "../../../model";
 
 export const initialState: Layout = {
     isVerified: false,
-    filerText: '',
+    filerText: "",
     projects: [],
     displayProjects: []
 };

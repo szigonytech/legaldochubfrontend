@@ -1,10 +1,10 @@
-import { App } from '../model';
+import { App } from "../model";
 
 const initialState: App = {
     isBusy: false
 };
-const LIMIT = 'app/LIMIT';
-const SHOWAPP_BUSY = 'app/SHOWAPP_BUSY';
+const LIMIT = "app/LIMIT";
+const SHOWAPP_BUSY = "app/SHOWAPP_BUSY";
 
 export function handleSettingsLimit(payload: boolean) {
     return { type: LIMIT, payload: payload };

@@ -1,13 +1,13 @@
-import { Login } from '../../../model';
+import { Login } from "../../../model";
 
 export const initialState: Login = {
   form: {
-    email: '',
-    password: ''
+    email: "",
+    password: ""
   },
   errors: {
-    email: '',
-    password: ''
+    email: "",
+    password: ""
   },
   isValid: true,
   isPassword: false

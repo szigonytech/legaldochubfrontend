@@ -1,1 +1,1 @@
-export const rootRoute = '/';
+export const rootRoute = "/";

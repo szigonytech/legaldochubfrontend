@@ -1,12 +1,12 @@
-import { formValidation, isEmpty } from '../../../app/common/methods';
-import REGISTRATION_VALIDATE_SCHEMA from '../utils/validateSchema';
-import { helperText } from '../utils/variables';
-import { Registration } from '../../../app/client/api';
-import { history } from '../../../store';
-import { login } from '../../../routes';
+import { formValidation, isEmpty } from "../../../app/common/methods";
+import REGISTRATION_VALIDATE_SCHEMA from "../utils/validateSchema";
+import { helperText } from "../utils/variables";
+import { Registration } from "../../../app/client/api";
+import { history } from "../../../store";
+import { login } from "../../../routes";
 
-export const REGISTER_ONCHANGE = 'REGISTER_ONCHANGE';
-export const REGISTER_ONOUTERCHANGE = 'REGISTER_ONOUTERCHANGE';
+export const REGISTER_ONCHANGE = "REGISTER_ONCHANGE";
+export const REGISTER_ONOUTERCHANGE = "REGISTER_ONOUTERCHANGE";
 
 export const handleChange = (name: string, value: any) => {
   return { type: REGISTER_ONCHANGE, payload: { name: name, value: value } };
@@ -21,9 +21,9 @@ export const onChange = (name: string, value: any) => {
       dispatch(handleChange( name, value ));  
       let form = {...getState().register_distributor.form};
       if (form.password  !==  form.confirmPassword) {
-          form.confirmPassword = '';
+          form.confirmPassword = "";
       }
-      dispatch(onOuterChange('errors', formValidation(REGISTRATION_VALIDATE_SCHEMA, form, helperText)));  
+      dispatch(onOuterChange("errors", formValidation(REGISTRATION_VALIDATE_SCHEMA, form, helperText)));  
     };
 };
 

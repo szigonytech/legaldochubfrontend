@@ -1,5 +1,5 @@
-import * as React from 'react';
-import { TextField } from '@material-ui/core';
+import * as React from "react";
+import { TextField } from "@material-ui/core";
 
 import {
     Button,
@@ -8,30 +8,30 @@ import {
     DialogContent,
     DialogContentText,
     DialogActions
-} from '@material-ui/core';
+} from "@material-ui/core";
 const style = {
     uploadFile: {
-        width: '560px',
-        height: '64px',
-        border: 'dashed 2px rgba(38, 98, 246, 0.72)',
-        color: 'rgba(38, 98, 246, 0.72)',
-        cursor: 'pointer'
+        width: "560px",
+        height: "64px",
+        border: "dashed 2px rgba(38, 98, 246, 0.72)",
+        color: "rgba(38, 98, 246, 0.72)",
+        cursor: "pointer"
     },
     btn: {
-        width: '110px',
-        height: '36px',
-        backgroundColor: '#f1f1f1',
-        color: 'rgba(0, 0, 0, 0.38)'
+        width: "110px",
+        height: "36px",
+        backgroundColor: "#f1f1f1",
+        color: "rgba(0, 0, 0, 0.38)"
     }
 };
 class NewProjectModal extends React.Component<any, any> {
     timer: any = null;
     state = {
-        name: ''
+        name: ""
     };
 
     componentDidMount() {
-        this.setState({ name: '' });
+        this.setState({ name: "" });
     }
     closeModal() {
         this.props.handleClose();
@@ -61,7 +61,7 @@ class NewProjectModal extends React.Component<any, any> {
                         <div>
                             <TextField
                                 id="standard-full-width"
-                                style={{ margin: 8, width: '30rem' }}
+                                style={{ margin: 8, width: "30rem" }}
                                 placeholder="Enter your project name."
                                 fullWidth
                                 margin="normal"
@@ -79,7 +79,7 @@ class NewProjectModal extends React.Component<any, any> {
                     </Button>
                     <Button
                         onClick={() => this.handleUpload()}
-                        style={{ ...style.btn, ...{ color: this.state.name ? '#3ec83e' : '' } }}
+                        style={{ ...style.btn, ...{ color: this.state.name ? "#3ec83e" : "" } }}
                         disabled={this.state.name ? false : true}
                     >
                         CREATE

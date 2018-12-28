@@ -1,6 +1,6 @@
-import * as React from 'react';
-import { LinearProgress } from '@material-ui/core';
-import { Done } from '@material-ui/icons';
+import * as React from "react";
+import { LinearProgress } from "@material-ui/core";
+import { Done } from "@material-ui/icons";
 import {
     Button,
     Dialog,
@@ -8,20 +8,20 @@ import {
     DialogContent,
     DialogContentText,
     DialogActions
-} from '@material-ui/core';
+} from "@material-ui/core";
 const style = {
     uploadFile: {
-        width: '560px',
-        height: '64px',
-        border: 'dashed 2px rgba(38, 98, 246, 0.72)',
-        color: 'rgba(38, 98, 246, 0.72)',
-        cursor: 'pointer'
+        width: "560px",
+        height: "64px",
+        border: "dashed 2px rgba(38, 98, 246, 0.72)",
+        color: "rgba(38, 98, 246, 0.72)",
+        cursor: "pointer"
     },
     btn: {
-        width: '110px',
-        height: '36px',
-        backgroundColor: '#f1f1f1',
-        color: 'rgba(0, 0, 0, 0.38)'
+        width: "110px",
+        height: "36px",
+        backgroundColor: "#f1f1f1",
+        color: "rgba(0, 0, 0, 0.38)"
     }
 };
 class UploadFileModal extends React.Component<any, any> {
@@ -29,8 +29,8 @@ class UploadFileModal extends React.Component<any, any> {
     state = {
         completed: 0,
         buffer: 10,
-        files: '',
-        name: ''
+        files: "",
+        name: ""
     };
     componentDidMount() {
         if (this.props.linearLoader) {
@@ -55,9 +55,9 @@ class UploadFileModal extends React.Component<any, any> {
     };
     closeModal() {
         this.props.handleClose();
-        const file: any = document.getElementById('file-input');
+        const file: any = document.getElementById("file-input");
         file.value = null;
-        this.setState({ files: '', name: '' });
+        this.setState({ files: "", name: "" });
 
     }
     handleUpload() {
@@ -68,7 +68,7 @@ class UploadFileModal extends React.Component<any, any> {
     }
     render() {
         const { open, title } = this.props;
-        const file: any = document.getElementById('file-input');
+        const file: any = document.getElementById("file-input");
         return (
             <Dialog
                 open={open}
@@ -78,7 +78,7 @@ class UploadFileModal extends React.Component<any, any> {
                 aria-describedby="alert-dialog-slide-description"
             >
                 <LinearProgress
-                    style={{ backgroundColor: '#fff' }}
+                    style={{ backgroundColor: "#fff" }}
                     variant="determinate"
                     value={this.state.completed}
                 />
@@ -93,10 +93,10 @@ class UploadFileModal extends React.Component<any, any> {
                             style={style.uploadFile}
                             onClick={(e) => file.click()}
                         >
-                            {this.state.name ? this.state.name.replace(/^.*[\\\/]/, '') : '+ Upload doc File'}
+                            {this.state.name ? this.state.name.replace(/^.*[\\\/]/, "") : "+ Upload doc File"}
                         </div>
                         {this.state.files &&
-                            <div className="center" style={{ color: '#3ec83e' }}><Done /> Success...!</div>}
+                            <div className="center" style={{ color: "#3ec83e" }}><Done /> Success...!</div>}
                     </DialogContentText>
                 </DialogContent>
                 <DialogActions>
@@ -105,7 +105,7 @@ class UploadFileModal extends React.Component<any, any> {
                     </Button>
                     <Button
                         onClick={() => this.handleUpload()}
-                        style={{ ...style.btn, ...{ color: this.state.files ? '#3ec83e' : '' } }}
+                        style={{ ...style.btn, ...{ color: this.state.files ? "#3ec83e" : "" } }}
                         disabled={this.state.files ? false : true}
                     >
                         UPLOAD
@@ -116,9 +116,9 @@ class UploadFileModal extends React.Component<any, any> {
                     id="file-input"
                     type="file"
                     style={{
-                        position: 'absolute',
-                        display: 'none',
-                        zIndex: 999, width: '4rem', height: '32px', borderRadius: '0 4rem 4rem 0'
+                        position: "absolute",
+                        display: "none",
+                        zIndex: 999, width: "4rem", height: "32px", borderRadius: "0 4rem 4rem 0"
                     }}
                 />
             </Dialog >

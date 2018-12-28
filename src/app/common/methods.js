@@ -1,4 +1,4 @@
-import Ajv from 'ajv';
+import Ajv from "ajv";
 
 export const isEmpty = (obj) => {
     for(let key in obj) {

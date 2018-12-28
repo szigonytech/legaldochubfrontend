@@ -1,11 +1,11 @@
-import * as React from 'react';
-import Avatar from '@material-ui/core/Avatar';
-import Menu from '@material-ui/core/Menu';
-import MenuItem from '@material-ui/core/MenuItem';
-import ListItemIcon from '@material-ui/core/ListItemIcon';
-import ListItemText from '@material-ui/core/ListItemText';
-import LogOut from '@material-ui/icons/SettingsPower';
-// import * as cookie from '../../app/utils/cookie';
+import * as React from "react";
+import Avatar from "@material-ui/core/Avatar";
+import Menu from "@material-ui/core/Menu";
+import MenuItem from "@material-ui/core/MenuItem";
+import ListItemIcon from "@material-ui/core/ListItemIcon";
+import ListItemText from "@material-ui/core/ListItemText";
+import LogOut from "@material-ui/icons/SettingsPower";
+// import * as cookie from "../../app/utils/cookie";
 
 export default class AppHeader extends React.Component<any> {
     state = {
@@ -23,19 +23,19 @@ export default class AppHeader extends React.Component<any> {
         return (
             <div className="col col-12">
                 <div className="col col-2 h3 px2 center bg-white">
-                    <div className="col center" style={{ height: '64px', color: '#3b76ff' }}>
+                    <div className="col center" style={{ height: "64px", color: "#3b76ff" }}>
                         DOC HUB
                     </div>
                 </div>
                 <div className="col col-10">
-                    <div className="col col-12" style={{ height: '64px' }}>
+                    <div className="col col-12" style={{ height: "64px" }}>
                         <div className="right">
                             <Avatar
-                                aria-owns={anchorEl ? 'simple-menu' : 'null'}
+                                aria-owns={anchorEl ? "simple-menu" : "null"}
                                 aria-haspopup="true"
                                 className="profile_Avatar clickable"
                                 alt="Profile"
-                                style={{ backgroundColor: '#fff' }}
+                                style={{ backgroundColor: "#fff" }}
                                 onClick={(event: any) => this.handleProfileClick(event)}
                             />
                             <Menu

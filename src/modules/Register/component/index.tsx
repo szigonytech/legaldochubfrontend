@@ -1,6 +1,6 @@
-import * as React from 'react';
-import { Visible } from '../../../app/assets/icons';
-import '../style.scss';
+import * as React from "react";
+import { Visible } from "../../../app/assets/icons";
+import "../style.scss";
 
 class Register extends React.Component<any> {
   render() {
@@ -19,8 +19,8 @@ class Register extends React.Component<any> {
                          <div className="col-6 inputContainer-register">
                                    <input  
                                         type="text" 
-                                        onChange={(e) => onChange('firstname', e.target.value)}
-                                        placeholder={'enter'} 
+                                        onChange={(e) => onChange("firstname", e.target.value)}
+                                        placeholder={"enter"} 
                                         value={form.firstname}
                                         disabled={false}
                                    />
@@ -30,8 +30,8 @@ class Register extends React.Component<any> {
                               <div className="col-6 inputContainer-register">
                                    <input  
                                         type="text" 
-                                        onChange={(e) => onChange('lastname', e.target.value)}
-                                        placeholder={'enter'} 
+                                        onChange={(e) => onChange("lastname", e.target.value)}
+                                        placeholder={"enter"} 
                                         value={form.lastname}
                                         disabled={false}
                                    />
@@ -42,8 +42,8 @@ class Register extends React.Component<any> {
                     <div className="inputContainer-register">
                                    <input  
                                         type="text" 
-                                        onChange={(e) => onChange('email', e.target.value)}
-                                        placeholder={'enter'} 
+                                        onChange={(e) => onChange("email", e.target.value)}
+                                        placeholder={"enter"} 
                                         value={form.email}
                                         disabled={false}
                                    />
@@ -54,8 +54,8 @@ class Register extends React.Component<any> {
                               <div className="inputContainer-register">
                                    <input  
                                         type="number" 
-                                        onChange={(e) => onChange('contactNo', e.target.value)}
-                                        placeholder={'enter'} 
+                                        onChange={(e) => onChange("contactNo", e.target.value)}
+                                        placeholder={"enter"} 
                                         value={form.contactNo}
                                         disabled={false}
                                    />
@@ -64,9 +64,9 @@ class Register extends React.Component<any> {
 
                               <div className="inputContainer-register">
                                    <input  
-                                        type={isPassword ? 'text' : 'password'}
-                                        onChange={(e) => onChange('password', e.target.value)}
-                                        placeholder={'enter'} 
+                                        type={isPassword ? "text" : "password"}
+                                        onChange={(e) => onChange("password", e.target.value)}
+                                        placeholder={"enter"} 
                                         value={form.password}
                                         disabled={false}
                                    />
@@ -74,16 +74,16 @@ class Register extends React.Component<any> {
                                    <span className="helperText-tools">{errors.password}</span>
                                    <span 
                                         className="eye-login" 
-                                        onClick={() => onOuterChange('isPassword', !isPassword)}
+                                        onClick={() => onOuterChange("isPassword", !isPassword)}
                                    > 
                                         <Visible />
                                    </span>
                               </div>
                     <div className="inputContainer-register">
                                    <input  
-                                        type={isConfirmPassword ? 'text' : 'password'}
-                                        onChange={(e) => onChange('confirmPassword', e.target.value)}
-                                        placeholder={'enter'} 
+                                        type={isConfirmPassword ? "text" : "password"}
+                                        onChange={(e) => onChange("confirmPassword", e.target.value)}
+                                        placeholder={"enter"} 
                                         value={form.confirmPassword}
                                         disabled={false}
                                    />
@@ -91,7 +91,7 @@ class Register extends React.Component<any> {
                                    <span className="helperText-tools">{errors.confirmPassword}</span>
                                    <span 
                                              className="eye-login" 
-                                             onClick={() => onOuterChange('isConfirmPassword', !isConfirmPassword)}
+                                             onClick={() => onOuterChange("isConfirmPassword", !isConfirmPassword)}
                                    > 
                                         <Visible />
                                    </span>

@@ -1,11 +1,11 @@
-import { combineReducers } from 'redux';
-import { routerReducer } from 'react-router-redux';
+import { combineReducers } from "redux";
+import { routerReducer } from "react-router-redux";
 
-import app from './app';
-import dochub from './dochub';
+import app from "./app";
+import dochub from "./dochub";
 
-export * from './app';
-export * from './dochub';
+export * from "./app";
+export * from "./dochub";
 
 const rootReducer = combineReducers({
     app,

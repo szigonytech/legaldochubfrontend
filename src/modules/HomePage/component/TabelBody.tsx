@@ -1,5 +1,5 @@
-import * as React from 'react';
-import '../style.scss';
+import * as React from "react";
+import "../style.scss";
 
 const TableBody = ({
     rowList,
@@ -13,10 +13,10 @@ const TableBody = ({
                             <div
                                 className="col col-12 pl2 pr2 py1 v-align clickable black-72 activeRow-homepage"
                                 style={{
-                                    height: '60px',
-                                    fontSize: '14px',
-                                    position: 'relative',
-                                    borderBottom: '1px solid rgb(224, 224, 224)'
+                                    height: "60px",
+                                    fontSize: "14px",
+                                    position: "relative",
+                                    borderBottom: "1px solid rgb(224, 224, 224)"
                                 }}
                                 // onMouseEnter={() => handleMouseHover(row.id)}
                                 // onMouseLeave={() => handleMouseLeave()}

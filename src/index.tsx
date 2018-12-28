@@ -1,13 +1,13 @@
-import * as React from 'react';
-import * as ReactDOM from 'react-dom';
-import 'src/app/assets/styles/index.sass';
-import App from './App';
-import { Provider } from 'react-redux';
-import { store, history } from './store';
-import { Router } from 'react-router';
-import registerServiceWorker from './registerServiceWorker';  
+import * as React from "react";
+import * as ReactDOM from "react-dom";
+import "src/app/assets/styles/index.sass";
+import App from "./App";
+import { Provider } from "react-redux";
+import { store, history } from "./store";
+import { Router } from "react-router";
+import registerServiceWorker from "./registerServiceWorker";  
 
-const target = document.getElementById('root') as HTMLElement;
+const target = document.getElementById("root") as HTMLElement;
 registerServiceWorker();
 
 ReactDOM.render(
@@ -21,8 +21,8 @@ ReactDOM.render(
 
 if ((module as any).hot) {
   (module as any).hot.
-    accept('./App', () => {
-      const NextApp = require('./App').default;
+    accept("./App", () => {
+      const NextApp = require("./App").default;
       ReactDOM.render(
         <Provider store={store}>
           <div>

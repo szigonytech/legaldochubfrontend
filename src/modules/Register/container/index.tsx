@@ -1,11 +1,11 @@
-import * as React from 'react';
-import { connect } from 'react-redux';
-import { createSelector } from 'reselect';
-import { GlobalState } from '../../../model';
-import { bindActionCreators } from 'redux';
-import * as registerActions from './actions';
-import * as _ from 'lodash';
-import Register from '../component';
+import * as React from "react";
+import { connect } from "react-redux";
+import { createSelector } from "reselect";
+import { GlobalState } from "../../../model";
+import { bindActionCreators } from "redux";
+import * as registerActions from "./actions";
+import * as _ from "lodash";
+import Register from "../component";
 
 class RegisterContainer extends React.Component {
   render() {

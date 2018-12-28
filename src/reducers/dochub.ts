@@ -1,5 +1,5 @@
-import { DocHub } from '../model';
-import { createNewProject, getProjects, getProjectFiles, uploadFile, getFiles } from '../app/client/api';
+import { DocHub } from "../model";
+import { createNewProject, getProjects, getProjectFiles, uploadFile, getFiles } from "../app/client/api";
 
 const initialState: DocHub = {
     projects: [],
@@ -11,14 +11,14 @@ const initialState: DocHub = {
     selectedFile: null,
 };
 
-const VIEW_FILE_DETAILS = 'dochob/VIEW_FILE_DETAILS';
-const SELECTED_FILE = 'dochob/SELECTED_FILE';
-const RENDER_DOC_VIEW = 'dochob/RENDER_DOC_VIEW';
-const PROJECTS = 'app/PROJECTS';
-const PROJECTFILES = 'app/PROJECTFILES';
-const OPENNEWPROJECTMODAL = 'app/OPENNEWPROJECTMODAL';
-const UPLOADFILE = 'app/UPLOADFILE';
-const RESET = 'app/RESET';
+const VIEW_FILE_DETAILS = "dochob/VIEW_FILE_DETAILS";
+const SELECTED_FILE = "dochob/SELECTED_FILE";
+const RENDER_DOC_VIEW = "dochob/RENDER_DOC_VIEW";
+const PROJECTS = "app/PROJECTS";
+const PROJECTFILES = "app/PROJECTFILES";
+const OPENNEWPROJECTMODAL = "app/OPENNEWPROJECTMODAL";
+const UPLOADFILE = "app/UPLOADFILE";
+const RESET = "app/RESET";
 
 export const reset = (payload: any) => ({ type: RESET, payload });
 export const handleViewFileDetails = (payload: any) => ({
@@ -103,7 +103,7 @@ export function fileUpload(projectId: number, files: any, calback: Function) {
         try {
             let formData = new FormData();
             for (let file of files) {
-                formData.append('file', file);
+                formData.append("file", file);
             }
             await uploadFile(projectId, formData);
             dispatch(fetchProjectFiles(projectId));

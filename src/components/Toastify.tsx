@@ -1,8 +1,8 @@
-import * as React from 'react';
-import { withStyles } from '@material-ui/core/styles';
-import Snackbar from '@material-ui/core/Snackbar';
-import IconButton from '@material-ui/core/IconButton';
-import CloseIcon from '@material-ui/icons/Close';
+import * as React from "react";
+import { withStyles } from "@material-ui/core/styles";
+import Snackbar from "@material-ui/core/Snackbar";
+import IconButton from "@material-ui/core/IconButton";
+import CloseIcon from "@material-ui/icons/Close";
 
 const styles = (theme: any) => ({
   close: {
@@ -18,8 +18,8 @@ class SimpleSnackbar extends React.Component<any> {
       <div className="commonToast">
         <Snackbar
           anchorOrigin={{
-            vertical: 'top',
-            horizontal: 'center',
+            vertical: "top",
+            horizontal: "center",
           }}
           open={options.open}
           autoHideDuration={100000}

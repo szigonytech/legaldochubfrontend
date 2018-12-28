@@ -1,6 +1,6 @@
-import * as React from 'react';
-import { Visible } from '../../../app/assets/icons';
-import '../style.scss';
+import * as React from "react";
+import { Visible } from "../../../app/assets/icons";
+import "../style.scss";
 
 class Login extends React.Component<any> {
   render() {
@@ -12,8 +12,8 @@ class Login extends React.Component<any> {
           <div className="inputContainer-login">
             <input  
                 type="text" 
-                onChange={(e) => onChange('email', e.target.value)}
-                placeholder={'enter'} 
+                onChange={(e) => onChange("email", e.target.value)}
+                placeholder={"enter"} 
                 value={form.email}
                 disabled={false}
             />
@@ -22,15 +22,15 @@ class Login extends React.Component<any> {
           </div>
           <div className="inputContainer-login">
             <input  
-                type={isPassword ? 'text' : 'password'} 
-                onChange={(e) => onChange('password', e.target.value)}
-                placeholder={'enter'} 
+                type={isPassword ? "text" : "password"} 
+                onChange={(e) => onChange("password", e.target.value)}
+                placeholder={"enter"} 
                 value={form.password}
                 disabled={false}
             />
             <label className="required-login">Password</label>
             <div className="eye-login" >
-              <span onClick={() => onOuterChange('isPassword', !isPassword)}> 
+              <span onClick={() => onOuterChange("isPassword", !isPassword)}> 
                 <Visible />
                 </span>
               </div>

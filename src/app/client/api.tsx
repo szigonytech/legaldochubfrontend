@@ -1,22 +1,22 @@
-import axios, { AxiosRequestConfig } from 'axios';
-import * as Qs from 'qs';
-import * as cookie from 'src/app/utils/cookie';
+import axios, { AxiosRequestConfig } from "axios";
+import * as Qs from "qs";
+import * as cookie from "src/app/utils/cookie";
 
 export const appApi = axios.create({
-    baseURL: 'http://localhost:3000',  // process.env.REACT_APP_DOCHUB_HOST
+    baseURL: "http://localhost:3000",  // process.env.REACT_APP_DOCHUB_HOST
     timeout: 30000,
     headers: {
-        'Accept': 'application/json',
-        'Content-Type': 'application/json'
+        "Accept": "application/json",
+        "Content-Type": "application/json"
     },
     paramsSerializer(params: any) {
-        return Qs.stringify(params, { arrayFormat: 'brackets' });
+        return Qs.stringify(params, { arrayFormat: "brackets" });
     }
 });
 appApi.interceptors.request.use((config: AxiosRequestConfig) => {
     let token: string = cookie.get(cookie.AUTHENTICAT_TOKEN);
     if (token) {
-        config.headers = { 'Authorization': `Bearer ${token}` };
+        config.headers = { "Authorization": `Bearer ${token}` };
     }
     return config;
 });

@@ -1,12 +1,12 @@
-import * as React from 'react';
-import { GlobalState } from 'src/model';
-import { connect } from 'react-redux';
-import { createSelector } from 'reselect';
-import { bindDispatch } from 'src/app/utils/redux';
-import HomePageView from '../component';
-import UploadFileModal from '../component/UploadFileModal';
-import NewProjectModal from '../component/NewProjectModal';
-import DocumentViewer from '../component/DocumentViewer';
+import * as React from "react";
+import { GlobalState } from "src/model";
+import { connect } from "react-redux";
+import { createSelector } from "reselect";
+import { bindDispatch } from "src/app/utils/redux";
+import HomePageView from "../component";
+import UploadFileModal from "../component/UploadFileModal";
+import NewProjectModal from "../component/NewProjectModal";
+import DocumentViewer from "../component/DocumentViewer";
 
 class HomePage extends React.Component<any> {
   componentWillMount() {
@@ -26,7 +26,7 @@ class HomePage extends React.Component<any> {
         {openNewProjectModal && (
           <NewProjectModal
             open={openNewProjectModal}
-            title={'Upload File'}
+            title={"Upload File"}
             handleClose={() => actions.handleNewProjectModal(false)}
             createProject={(value: any) => actions.saveProjects(value)}
           />
@@ -34,7 +34,7 @@ class HomePage extends React.Component<any> {
         {!renderDocView && (
           <UploadFileModal
             open={fileUploadModal}
-            title={'Upload File'}
+            title={"Upload File"}
             handleClose={() => actions.handleUploadFiles(false)}
             fileUpload={(projectId: number, files: any, callback: Function) =>
               actions.fileUpload(projectId, files, callback)

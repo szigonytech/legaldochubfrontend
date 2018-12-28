@@ -1,4 +1,4 @@
-self.addEventListener('push', (event) => {
+self.addEventListener("push", (event) => {
     const data = event.data.json();
     const { title } = data;
 
