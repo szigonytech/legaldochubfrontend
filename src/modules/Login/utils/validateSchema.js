@@ -16,7 +16,7 @@ const LOGIN_VALIDATE_SCHEMA = {
                     "minLength":6
                 }
     }
-}
+};
 
 export default LOGIN_VALIDATE_SCHEMA;
 
