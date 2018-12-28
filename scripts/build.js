@@ -53,12 +53,6 @@ measureFileSizesBeforeBuild(paths.appBuild)
   })
   .then(
     ({ stats, previousFileSizes, warnings }) => {
-      if (warnings.length) {
-        
-      } else {
-        
-      }
-
       printFileSizesAfterBuild(
         stats,
         previousFileSizes,

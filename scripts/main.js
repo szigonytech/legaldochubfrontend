@@ -50,7 +50,7 @@ if ("serviceWorker" in navigator && "PushManager" in window) {
     initializeUI();
   })
   .catch(function(error) {
-    console.error("Service Worker Error", error);
+    return error;
   });
 } else {
   console.warn("Push messaging is not supported");
@@ -71,11 +71,6 @@ function initializeUI() {
   swRegistration.pushManager.getSubscription()
   .then(function(subscription) {
     isSubscribed = !(subscription === null);
-
-    if (isSubscribed) {
-    } else {
-    }
-
     updateBtn();
   });
 }
