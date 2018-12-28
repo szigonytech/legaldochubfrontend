@@ -14,7 +14,6 @@ export const onOuterChange = (name: string, value: any) => {
 export const getProjectList = () => {
     return async(dispatch: any, getState: any) => {
         let { data } = await getProjects();
-        console.log(data);
         dispatch(onOuterChange("projects", data));
         dispatch(onOuterChange("displayProjects", getState().layout_distributor.projects));
     };

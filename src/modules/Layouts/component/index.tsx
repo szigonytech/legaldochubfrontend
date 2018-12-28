@@ -91,7 +91,6 @@ class Layout extends React.Component<any, any> {
   render() {
     const { children } = this.props, currentPath = history.location.pathname;
     const splitPath: string[] = currentPath.split("/");
-    console.log(this.props, "layouus");
     return (
       <MuiThemeProvider theme={theme}>  
         <ErrorModal {...this.props} />

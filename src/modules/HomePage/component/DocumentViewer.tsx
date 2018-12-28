@@ -2,7 +2,6 @@ import * as React from "react";
 
 export default class DocumentViewer extends React.Component<any, any> {
   render() {
-    console.log(this.props);
     return (
       <div className="col col-12">
         <div

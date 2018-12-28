@@ -20,7 +20,6 @@
 /* eslint-env browser, es6 */
 
 "use strict";
-console.log("hai");
 const applicationServerPublicKey = "BNf6TB_vvy2YRZfduaJRXimUoxsoIZY6l5zBfhDHm2nBwL_TAna-39uxHaNPOu3sBdwVx5HdecYnyVDkfxjal-g";
 
 const pushButton = document.querySelector(".js-push-btn");
@@ -43,11 +42,9 @@ function urlB64ToUint8Array(base64String) {
 }
 
 if ("serviceWorker" in navigator && "PushManager" in window) {
-  console.log("Service Worker and Push is supported");
 
   navigator.serviceWorker.register("sw.js")
   .then(function(swReg) {
-    console.log("Service Worker is registered", swReg);
 
     swRegistration = swReg;
     initializeUI();
@@ -76,9 +73,7 @@ function initializeUI() {
     isSubscribed = !(subscription === null);
 
     if (isSubscribed) {
-      console.log("User IS subscribed.");
     } else {
-      console.log("User is NOT subscribed.");
     }
 
     updateBtn();
@@ -108,7 +103,6 @@ function subscribeUser() {
     applicationServerKey: applicationServerKey
   })
   .then(function(subscription) {
-    console.log("User is subscribed.");
 
     updateSubscriptionOnServer(subscription);
 
@@ -117,7 +111,6 @@ function subscribeUser() {
     updateBtn();
   })
   .catch(function(err) {
-    console.log("Failed to subscribe the user: ", err);
     updateBtn();
   });
 }
@@ -129,12 +122,10 @@ function unsubscribeUser() {
     }
   })
   .catch(function(error) {
-    console.log("Error unsubscribing", error);
   })
   .then(function() {
     updateSubscriptionOnServer(null);
 
-    console.log("User is unsubscribed.");
     isSubscribed = false;
 
     updateBtn();

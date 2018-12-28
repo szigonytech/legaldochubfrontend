@@ -44,12 +44,11 @@ export default function registerServiceWorker() {
     navigator.serviceWorker.register("/service-worker.js")
       .then(async function (swReg: any) {
         swRegistration = swReg;
-        console.log(swReg);
         subscribeUser();
         // checkValidServiceWorker("null");
       })
       .catch(function (error: any) {
-        console.log("Service Worker Error", error);
+        return error;
       });
   } else {
     console.warn("Push messaging is not supported");
@@ -63,15 +62,13 @@ async function subscribeUser() {
       userVisibleOnly: true,
       applicationServerKey: applicationServerKey
     }).then(function (subscription: any) {
-      console.log("User is subscribed.");
-      console.log(JSON.stringify(subscription));
       cookie.set(cookie.SUBSCRIPTION_KEY, subscription);
       // updateSubscriptionOnServer(subscription);
     }).catch(function (err: any) {
-      console.log("Failed to subscribe the user: ", err);
+        return err;
     });
   } catch (err) {
-    console.log(err);
+    return err;
   }
 
 }
@@ -83,11 +80,10 @@ export function unsubscribeUser() {
       }
     })
     .catch(function (error: any) {
-      console.log("Error unsubscribing", error);
+      return error;
     })
     .then(function () {
       // updateSubscriptionOnServer(null);
-      console.log("User is unsubscribed.");
       // updateBtn();
     });
 }
@@ -105,12 +101,10 @@ function registerValidSW(swUrl: string) {
                 // the fresh content will have been added to the cache.
                 // It"s the perfect time to display a "New content is
                 // available; please refresh." message in your web app.
-                console.log("New content is available; please refresh.");
               } else {
                 // At this point, everything has been precached.
                 // It"s the perfect time to display a
                 // "Content is cached for offline use." message.
-                console.log("Content is cached for offline use.");
               }
             }
           };
@@ -143,9 +137,7 @@ export function checkValidServiceWorker(swUrl: string) {
       }
     })
     .catch(() => {
-      console.log(
-        "No internet connection found. App is running in offline mode."
-      );
+      return "No internet connection found. App is running in offline mode.";
     });
 }
 

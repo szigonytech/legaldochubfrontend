@@ -66,8 +66,7 @@ export function fetchProjects() {
       dispatch(handleProjects(data));
     } catch (err) {
       if (err.response) {
-        let { data } = err.response;
-        console.log(data);
+        return err.response;
       }
     }
   };
@@ -79,8 +78,7 @@ export function fetchProjectFiles(id: number) {
             dispatch(handleProjectFiles(data));
         } catch (err) {
             if (err.response) {
-                let { data } = err.response;
-                console.log(data);
+                return err.response;
             }
         }
     };
@@ -92,8 +90,7 @@ export function saveProjects(value: string) {
       dispatch(fetchProjects());
     } catch (err) {
       if (err.response) {
-        let { data } = err.response;
-        console.log(data);
+        return err.response;
       }
     }
   };
@@ -110,8 +107,8 @@ export function fileUpload(projectId: number, files: any, calback: Function) {
             calback();
         } catch (err) {
             if (err.response) {
-                let { data } = err.response;
-                console.log(data);
+                return err.response;
+                
             }
         }
     };
@@ -132,8 +129,8 @@ export function getDocument(compare: any, docDetail: any) {
       await dispatch(updateSelectedFile(docDetail));
     } catch (err) {
       if (err.response) {
-        let { data } = err.response;
-        console.log(data);
+        return err.response;
+        
       }
     }
   };

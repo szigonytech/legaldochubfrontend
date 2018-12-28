@@ -45,17 +45,14 @@ const applicationServerPublicKey = "BNf6TB_vvy2YRZfduaJRXimUoxsoIZY6l5zBfhDHm2nB
 
 // export function register() {
 //   if ("serviceWorker" in navigator && "PushManager" in window) {
-//     console.log("Service Worker and Push is supported");
 
 //     navigator.serviceWorker.register("sw.js")
 //       .then(function (swReg: any) {
-//         console.log("Service Worker is registered", swReg);
 
 //         swRegistration = swReg;
 //         initializeUI();
 //       })
 //       .catch(function (error: any) {
-//         console.log("Service Worker Error", error);
 //       });
 //   } else {
 //     console.warn("Push messaging is not supported");
@@ -79,9 +76,9 @@ const applicationServerPublicKey = "BNf6TB_vvy2YRZfduaJRXimUoxsoIZY6l5zBfhDHm2nB
 //       isSubscribed = !(subscription === null);
 
 //       if (isSubscribed) {
-//         console.log("User IS subscribed.");
+
 //       } else {
-//         console.log("User is NOT subscribed.");
+
 //       }
 
 //       updateBtn();
@@ -111,7 +108,6 @@ const applicationServerPublicKey = "BNf6TB_vvy2YRZfduaJRXimUoxsoIZY6l5zBfhDHm2nB
 //     applicationServerKey: applicationServerKey
 //   })
 //     .then(function (subscription: any) {
-//       console.log("User is subscribed.");
 
 //       updateSubscriptionOnServer(subscription);
 
@@ -120,7 +116,6 @@ const applicationServerPublicKey = "BNf6TB_vvy2YRZfduaJRXimUoxsoIZY6l5zBfhDHm2nB
 //       updateBtn();
 //     })
 //     .catch(function (err: any) {
-//       console.log("Failed to subscribe the user: ", err);
 //       updateBtn();
 //     });
 // }
@@ -132,12 +127,10 @@ const applicationServerPublicKey = "BNf6TB_vvy2YRZfduaJRXimUoxsoIZY6l5zBfhDHm2nB
 //       }
 //     })
 //     .catch(function (error: any) {
-//       console.log("Error unsubscribing", error);
 //     })
 //     .then(function () {
 //       updateSubscriptionOnServer(null);
 
-//       console.log("User is unsubscribed.");
 //       isSubscribed = false;
 
 //       updateBtn();

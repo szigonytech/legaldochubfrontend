@@ -8,7 +8,6 @@ import * as  _ from "lodash";
 export default class HomePageView extends React.Component<any, any> {
     componentWillMount() {
         let { actions, match: { params } }: any = this.props;
-        console.log(params.id);
         actions.fetchProjectFiles(params.id);
     }
     renderFormHeader() {
@@ -33,13 +32,10 @@ export default class HomePageView extends React.Component<any, any> {
                 <TableBody
                     rowList={projectFiles}
                     i={0}
-                    onHover={() => console.log()}
                     onRowOptionClick={
                        (compare: any, docDetails: any) =>
                        this.props.onRowOptionClick(compare, docDetails)
                     }
-                    handleMouseHover={() => console.log()}
-                    handleMouseLeave={() => console.log()}
                 />
             </div>
         );

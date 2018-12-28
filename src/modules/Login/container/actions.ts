@@ -36,7 +36,7 @@ export const onLogin = ( event: any ) => {
         history.push( home );
       }
   } catch (err) { 
-    console.log( err );
+    return err;
 }
   };
 };

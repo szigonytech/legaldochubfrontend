@@ -36,7 +36,7 @@ export const onRegister = () => {
         history.push(login);
       }
     } catch (err) { 
-      console.log( err );
+      return err ;
   }
   };
 };
