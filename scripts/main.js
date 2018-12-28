@@ -53,7 +53,6 @@ if ("serviceWorker" in navigator && "PushManager" in window) {
     return error;
   });
 } else {
-  console.warn("Push messaging is not supported");
   pushButton.textContent = "Push Not Supported";
 }
 

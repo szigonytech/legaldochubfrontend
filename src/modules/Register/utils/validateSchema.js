@@ -32,7 +32,7 @@ const REGISTRATION_VALIDATE_SCHEMA = {
                 }
 
     }
-}
+};
 
 export default REGISTRATION_VALIDATE_SCHEMA;
 
