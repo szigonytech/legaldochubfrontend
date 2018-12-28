@@ -19,27 +19,27 @@
 
 /* eslint-env browser, serviceworker, es6 */
 
-'use strict';
-self.addEventListener('push', function(event) {
-  console.log('[Service Worker] Push Received.');
+"use strict";
+self.addEventListener("push", function(event) {
+  console.log("[Service Worker] Push Received.");
   console.log(`[Service Worker] Push had this data: "${event.data.text()}"`);
 
-  const title = 'Next bottles Notification server....';
+  const title = "Next bottles Notification server....";
   const options = {
-    body: 'You have notification.',
-    badge: 'images/badge.png'
+    body: "You have notification.",
+    badge: "images/badge.png"
   };
 
   const notificationPromise = self.registration.showNotification(title, options);
   event.waitUntil(notificationPromise);
 });
 
-self.addEventListener('notificationclick', function(event) {
-  console.log('[Service Worker] Notification click Received.');
+self.addEventListener("notificationclick", function(event) {
+  console.log("[Service Worker] Notification click Received.");
 
   event.notification.close();
 
   event.waitUntil(
-    clients.openWindow('http://localhost:3000/')
+    clients.openWindow("http://localhost:3000/")
   );
 });

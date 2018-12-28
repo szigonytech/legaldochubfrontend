@@ -19,19 +19,19 @@
 
 /* eslint-env browser, es6 */
 
-'use strict';
-console.log('hai');
-const applicationServerPublicKey = 'BNf6TB_vvy2YRZfduaJRXimUoxsoIZY6l5zBfhDHm2nBwL_TAna-39uxHaNPOu3sBdwVx5HdecYnyVDkfxjal-g';
+"use strict";
+console.log("hai");
+const applicationServerPublicKey = "BNf6TB_vvy2YRZfduaJRXimUoxsoIZY6l5zBfhDHm2nBwL_TAna-39uxHaNPOu3sBdwVx5HdecYnyVDkfxjal-g";
 
-const pushButton = document.querySelector('.js-push-btn');
+const pushButton = document.querySelector(".js-push-btn");
 let isSubscribed = false;
 let swRegistration = null;
 
 function urlB64ToUint8Array(base64String) {
-  const padding = '='.repeat((4 - base64String.length % 4) % 4);
+  const padding = "=".repeat((4 - base64String.length % 4) % 4);
   const base64 = (base64String + padding)
-    .replace(/\-/g, '+')
-    .replace(/_/g, '/');
+    .replace(/\-/g, "+")
+    .replace(/_/g, "/");
 
   const rawData = window.atob(base64);
   const outputArray = new Uint8Array(rawData.length);
@@ -42,26 +42,26 @@ function urlB64ToUint8Array(base64String) {
   return outputArray;
 }
 
-if ('serviceWorker' in navigator && 'PushManager' in window) {
-  console.log('Service Worker and Push is supported');
+if ("serviceWorker" in navigator && "PushManager" in window) {
+  console.log("Service Worker and Push is supported");
 
-  navigator.serviceWorker.register('sw.js')
+  navigator.serviceWorker.register("sw.js")
   .then(function(swReg) {
-    console.log('Service Worker is registered', swReg);
+    console.log("Service Worker is registered", swReg);
 
     swRegistration = swReg;
     initializeUI();
   })
   .catch(function(error) {
-    console.error('Service Worker Error', error);
+    console.error("Service Worker Error", error);
   });
 } else {
-  console.warn('Push messaging is not supported');
-  pushButton.textContent = 'Push Not Supported';
+  console.warn("Push messaging is not supported");
+  pushButton.textContent = "Push Not Supported";
 }
 
 function initializeUI() {
-  pushButton.addEventListener('click', function() {
+  pushButton.addEventListener("click", function() {
     pushButton.disabled = true;
     if (isSubscribed) {
       // TODO: Unsubscribe user
@@ -76,9 +76,9 @@ function initializeUI() {
     isSubscribed = !(subscription === null);
 
     if (isSubscribed) {
-      console.log('User IS subscribed.');
+      console.log("User IS subscribed.");
     } else {
-      console.log('User is NOT subscribed.');
+      console.log("User is NOT subscribed.");
     }
 
     updateBtn();
@@ -86,16 +86,16 @@ function initializeUI() {
 }
 
 function updateBtn() {
-  if (Notification.permission === 'denied') {
-    pushButton.textContent = 'Push Messaging Blocked.';
+  if (Notification.permission === "denied") {
+    pushButton.textContent = "Push Messaging Blocked.";
     pushButton.disabled = true;
     updateSubscriptionOnServer(null);
     return;
   }
   if (isSubscribed) {
-    pushButton.textContent = 'Disable Push Messaging';
+    pushButton.textContent = "Disable Push Messaging";
   } else {
-    pushButton.textContent = 'Enable Push Messaging';
+    pushButton.textContent = "Enable Push Messaging";
   }
 
   pushButton.disabled = false;
@@ -108,7 +108,7 @@ function subscribeUser() {
     applicationServerKey: applicationServerKey
   })
   .then(function(subscription) {
-    console.log('User is subscribed.');
+    console.log("User is subscribed.");
 
     updateSubscriptionOnServer(subscription);
 
@@ -117,7 +117,7 @@ function subscribeUser() {
     updateBtn();
   })
   .catch(function(err) {
-    console.log('Failed to subscribe the user: ', err);
+    console.log("Failed to subscribe the user: ", err);
     updateBtn();
   });
 }
@@ -129,12 +129,12 @@ function unsubscribeUser() {
     }
   })
   .catch(function(error) {
-    console.log('Error unsubscribing', error);
+    console.log("Error unsubscribing", error);
   })
   .then(function() {
     updateSubscriptionOnServer(null);
 
-    console.log('User is unsubscribed.');
+    console.log("User is unsubscribed.");
     isSubscribed = false;
 
     updateBtn();
@@ -144,14 +144,14 @@ function unsubscribeUser() {
 function updateSubscriptionOnServer(subscription) {
   // TODO: Send subscription to application server
 
-  const subscriptionJson = document.querySelector('.js-subscription-json');
+  const subscriptionJson = document.querySelector(".js-subscription-json");
   const subscriptionDetails =
-    document.querySelector('.js-subscription-details');
+    document.querySelector(".js-subscription-details");
 
   if (subscription) {
     subscriptionJson.textContent = JSON.stringify(subscription);
-    subscriptionDetails.classList.remove('is-invisible');
+    subscriptionDetails.classList.remove("is-invisible");
   } else {
-    subscriptionDetails.classList.add('is-invisible');
+    subscriptionDetails.classList.add("is-invisible");
   }
 }
