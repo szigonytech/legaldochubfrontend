@@ -4,12 +4,7 @@
 process.env.BABEL_ENV = "production";
 process.env.NODE_ENV = "production";
 
-function copyPublicFolder() {
-  fs.copySync(paths.appPublic, paths.appBuild, {
-    dereference: true,
-    filter: (file) => file !== paths.appHtml,
-  });
-}
+
 
 
 // Makes the script crash on unhandled rejections instead of silently
@@ -41,6 +36,14 @@ const useYarn = fs.existsSync(paths.yarnLockFile);
 // These sizes are pretty large. We"ll warn for bundles exceeding them.
 const WARN_AFTER_BUNDLE_GZIP_SIZE = 512 * 1024;
 const WARN_AFTER_CHUNK_GZIP_SIZE = 1024 * 1024;
+
+function copyPublicFolder() {
+  fs.copySync(paths.appPublic, paths.appBuild, {
+    dereference: true,
+    filter: (file) => file !== paths.appHtml,
+  });
+}
+
 
 // Warn and crash if required files are missing
 if (!checkRequiredFiles([paths.appHtml, paths.appIndexJs])) {
