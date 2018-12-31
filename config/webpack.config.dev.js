@@ -65,7 +65,7 @@ module.exports = {
     // This is the URL that app is served from. We use "/" in development.
     publicPath: publicPath,
     // Point sourcemap entries to original disk location (format as URL on Windows)
-    devtoolModuleFilenameTemplate: info =>
+    devtoolModuleFilenameTemplate: (info) =>
       path.resolve(info.absoluteResourcePath).replace(/\\/g, "/"),
   },
   resolve: {
@@ -304,7 +304,7 @@ module.exports = {
     fs: "empty",
     net: "empty",
     tls: "empty",
-    child_process: "empty",
+    childProcess: "empty",
   },
   // Turn off performance hints during development because we don"t do any
   // splitting or minification in interest of speed. These warnings become

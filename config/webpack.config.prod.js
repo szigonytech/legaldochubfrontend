@@ -70,7 +70,7 @@ module.exports = {
     // We inferred the "public path" (such as / or /my-project) from homepage.
     publicPath: publicPath,
     // Point sourcemap entries to original disk location (format as URL on Windows)
-    devtoolModuleFilenameTemplate: info =>
+    devtoolModuleFilenameTemplate: (info) =>
       path
         .relative(paths.appSrc, info.absoluteResourcePath)
         .replace(/\\/g, "/"),
@@ -328,7 +328,7 @@ module.exports = {
           comments: false,
           // Turned on because emoji and regex is not minified properly using default
           // https://github.com/facebook/create-react-app/issues/2488
-          ascii_only: true,
+          asciiOnly: true,
         },
       },
       // Use multi-process parallel running to improve the build speed
@@ -396,6 +396,6 @@ module.exports = {
     fs: "empty",
     net: "empty",
     tls: "empty",
-    child_process: "empty",
+    childProcess: "empty",
   },
 };
