@@ -93,7 +93,11 @@ class UploadFileModal extends React.Component<any, any> {
                             style={style.uploadFile}
                             onClick={(e) => file.click()}
                         >
-                            {this.state.name ? this.state.name.replace(/^.*[\\\/]/, "") : "+ Upload doc File"}
+                            {
+                                this.state.name ? 
+                                this.state.name.replace(/^.*[\\\/]/, '') 
+                                : '+ Upload Word 97-2003 Document File'
+                            }
                         </div>
                         {this.state.files &&
                             <div className="center" style={{ color: "#3ec83e" }}><Done /> Success...!</div>}
