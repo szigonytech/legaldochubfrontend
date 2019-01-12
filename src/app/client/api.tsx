@@ -3,7 +3,7 @@ import * as Qs from "qs";
 import * as cookie from "src/app/utils/cookie";
 
 export const appApi = axios.create({
-    baseURL: "http://localhost:3000",  // process.env.REACT_APP_DOCHUB_HOST
+    baseURL:  process.env.REACT_APP_DOCHUB_HOST,
     timeout: 30000,
     headers: {
         "Accept": "application/json",
